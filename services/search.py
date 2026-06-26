@@ -1,7 +1,7 @@
 import logging
 import os
 from tavily import TavilyClient
-from duckduckgo_search import DDGS
+from ddgs import DDGS   # changed from duckduckgo_search
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +26,7 @@ class SearchService:
             except Exception as e:
                 logger.warning(f"Tavily search failed, falling back to DuckDuckGo: {e}")
 
-        # Fallback to DDG
+        # Fallback to DuckDuckGo (ddgs)
         try:
             for r in self.ddg.text(query, max_results=max_results):
                 results.append({
@@ -39,7 +39,7 @@ class SearchService:
         return results
 
     def search_news(self, query: str, max_results: int = 5) -> list:
-        """Search news using DDG."""
+        """Search news using DuckDuckGo."""
         try:
             results = []
             for r in self.ddg.news(query, max_results=max_results):

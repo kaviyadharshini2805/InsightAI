@@ -1,9 +1,10 @@
 streamlit>=1.28.0
 openai>=1.0.0
 tavily-python>=0.3.0
-duckduckgo-search>=4.0.0
+ddgs>=9.0.0                 # replaces duckduckgo-search
 beautifulsoup4>=4.12.0
 newspaper3k>=0.2.8
+lxml_html_clean             # <-- add this line
 reportlab>=4.0.0
 requests>=2.31.0
 python-dotenv>=1.0.0
